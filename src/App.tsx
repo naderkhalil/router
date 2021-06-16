@@ -12,15 +12,8 @@ const App: React.FC = () => {
       console.log(domain);
     }
 
-    // else if (domain.includes("brevbucket")) {
-    //   domain.replace("brevbucket", "bitbucket");
-    // } else if (domain.includes("brevlab")) {
-    //   domain.replace("brevlab", "gitlab");
-    // }
-
-    console.log(domain);
     // apparently replace makes it so you can't back-button back into here
-    window.location.replace(domain);
+    window.location.replace(`http://localhost:3000/pull?url=${domain}`);
   };
 
   useEffect(() => {
