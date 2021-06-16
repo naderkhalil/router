@@ -13,7 +13,7 @@ const App: React.FC = () => {
     }
 
     // apparently replace makes it so you can't back-button back into here
-    window.location.replace(`http://localhost:3000/pull?url=${domain}`);
+    window.location.replace(`https://console.brev.dev/pull?url=${domain}`);
   };
 
   useEffect(() => {
