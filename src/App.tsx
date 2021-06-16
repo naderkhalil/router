@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
 
-function App() {
+const App: React.FC = () => {
+  const handleReRoute = () => {
+    let domain = window.location.href;
+
+    console.log(domain);
+
+    if (domain.includes("brevhub")) {
+      domain = domain.replace("brevhub", "github");
+      console.log(domain);
+    }
+
+    // else if (domain.includes("brevbucket")) {
+    //   domain.replace("brevbucket", "bitbucket");
+    // } else if (domain.includes("brevlab")) {
+    //   domain.replace("brevlab", "gitlab");
+    // }
+
+    console.log(domain);
+    // apparently replace makes it so you can't back-button back into here
+    window.location.replace(domain);
+  };
+
+  useEffect(() => {
+    handleReRoute();
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"></header>
     </div>
   );
-}
+};
 
 export default App;
